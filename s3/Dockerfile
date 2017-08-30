@@ -22,4 +22,5 @@ VOLUME ["/data","/metadata"]
 
 EXPOSE 8000
 
+ENTRYPOINT ["/opt/s3/S3/docker-entrypoint.sh"]
 CMD supervisord -c /etc/supervisor/supervisord.conf -n
