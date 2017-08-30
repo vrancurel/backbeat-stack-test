@@ -6,7 +6,7 @@ In order to use the stack you must first log into the kafka container
 and create the zookeeper namespace and kafka topic:
 
 ```
-bin/zookeeper-shell.sh localhost:2181
+bin/zookeeper-shell.sh localhost:2181/backbeat
 create /replication-populator my_data
 quit
 ```
