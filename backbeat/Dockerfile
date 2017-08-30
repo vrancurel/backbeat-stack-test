@@ -10,6 +10,7 @@ RUN git clone https://github.com/scality/backbeat
 WORKDIR /opt/backbeat/backbeat
 RUN npm install
 
+COPY config.json /opt/backbeat/backbeat/conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 #no ports exposed
