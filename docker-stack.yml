@@ -29,7 +29,7 @@ services:
           - node.labels.io.zenko.type == storage
 
   s3-data:
-    image: scality/s3server
+    image: vrancurel/s3server
     ports:
       - "9991"
     networks:
@@ -46,7 +46,7 @@ services:
           - node.labels.io.zenko.type == storage
 
   s3-metadata:
-    image: scality/s3server
+    image: vrancurel/s3server
     ports:
       - "9990"
     networks:
@@ -63,7 +63,7 @@ services:
           - node.labels.io.zenko.type == storage
 
   s3-front:
-    image: scality/s3server
+    image: vrancurel/s3server
     ports:
       - "8000"
     networks:
