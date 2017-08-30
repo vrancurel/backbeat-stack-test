@@ -1,24 +1,24 @@
 FROM node:6
 MAINTAINER Vianney Rancurel <vr@scality.com>
 
-WORKDIR /usr/src/app
+WORKDIR /opt/s3
 
 # Keep the .git directory in order to properly report version
-COPY . /usr/src/app
+COPY . /opt/s3
 
 RUN apt-get update \
     && apt-get install -y jq python git build-essential supervisor --no-install-recommends \
     && mkdir -p /var/log/supervisor
 
-WORKDIR /usr/src/app
+WORKDIR /opt/s3
 RUN git clone https://github.com/scality/S3
-WORKDIR /usr/src/app/S3
+WORKDIR /opt/s3/S3
 RUN npm install
 
-COPY config.json /usr/src/app
+COPY config.json /opt/s3/S3
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-VOLUME ["/usr/src/app/localData","/usr/src/app/localMetadata"]
+VOLUME ["/data","/metadata"]
 
 EXPOSE 8000
 

@@ -21,7 +21,7 @@ COPY server.properties.backbeat ${KAFKA_DIR}/config
 COPY zookeeper.properties.backbeat ${KAFKA_DIR}/config
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-VOLUME ["/backbeat-data"]
+VOLUME ["/data"]
 
 # 2181 is zookeeper, 9092 is kafka
 EXPOSE 2181 9092

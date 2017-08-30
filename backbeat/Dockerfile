@@ -5,9 +5,9 @@ RUN apt-get update \
     && apt-get install -y jq python git build-essential supervisor --no-install-recommends \
     && mkdir -p /var/log/supervisor
 
-WORKDIR /usr/src/app
+WORKDIR /opt/backbeat
 RUN git clone https://github.com/scality/backbeat
-WORKDIR /usr/src/app/backbeat
+WORKDIR /opt/backbeat/backbeat
 RUN npm install
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
