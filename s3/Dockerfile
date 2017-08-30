@@ -3,9 +3,6 @@ MAINTAINER Vianney Rancurel <vr@scality.com>
 
 WORKDIR /opt/s3
 
-# Keep the .git directory in order to properly report version
-COPY . /opt/s3
-
 RUN apt-get update \
     && apt-get install -y jq python git build-essential supervisor --no-install-recommends \
     && mkdir -p /var/log/supervisor
