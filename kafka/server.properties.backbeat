@@ -8,8 +8,7 @@ broker.id=0
 # Switch to enable topic deletion or not, default value is false
 #delete.topic.enable=true
 
-############################# Socket Server Settings ###########################
-##
+############################# Socket Server Settings #############################
 
 # The address the socket server listens on. It will get the value returned from 
 # java.net.InetAddress.getCanonicalHostName() if not configured.
@@ -25,8 +24,7 @@ broker.id=0
 #advertised.listeners=PLAINTEXT://your.host.name:9092
 
 # Maps listener names to security protocols, the default is for them to be the same. See the config documentation for more details
-#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_
-PLAINTEXT,SASL_SSL:SASL_SSL
+#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
 
 # The number of threads handling network requests
 num.network.threads=3
