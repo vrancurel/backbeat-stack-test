@@ -17,10 +17,11 @@ RUN apt-get update \
 
 WORKDIR ${KAFKA_DIR}
 
-COPY zookeeper.supervisord.conf /etc/supervisor/conf.d/zookeeper.supervisord.conf
-COPY kafka.supervisord.conf /etc/supervisor/conf.d/kafka.supervisord.conf
+COPY server.properties.backbeat ${KAFKA_DIR}/config
+COPY zookeeper.properties.backbeat ${KAFKA_DIR}/config
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-#XXX do a volume for queue
+VOLUME ["/backbeat-data"]
 
 # 2181 is zookeeper, 9092 is kafka
 EXPOSE 2181 9092
