@@ -1,12 +1,13 @@
 NS = vrancurel
 VERSION ?= latest
+FLAGS =
 
 .PHONY: build push deploy clean
 
 build:
-	cd kafka ; docker build -t $(NS)/kafka:$(VERSION) .
-	cd backbeat ; docker build -t $(NS)/backbeat:$(VERSION) .
-	cd s3 ; docker build -t $(NS)/s3:$(VERSION) .
+	cd kafka ; docker build $(FLAGS) -t $(NS)/kafka:$(VERSION) .
+	cd backbeat ; docker build $(FLAGS) -t $(NS)/backbeat:$(VERSION) .
+	cd s3 ; docker build $(FLAGS) -t $(NS)/s3:$(VERSION) .
 
 push:
 	cd kafka ; docker push $(NS)/kafka:$(VERSION)
