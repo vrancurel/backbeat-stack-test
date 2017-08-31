@@ -2,7 +2,9 @@
 
 This is a development stack !
 
-In order to use the stack you must first log into the kafka container
+Please setup the stack first as described here: https://github.com/scality/Zenko/tree/master/swarm-production 
+
+In order to use the stack you must first log into the kafka container (docker exec -it container_id bash)
 and create the zookeeper namespace and kafka topic:
 
 ```
